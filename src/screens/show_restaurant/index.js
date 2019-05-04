@@ -6,6 +6,8 @@ import api from "../../services/api";
  
 import CategoryProducts from "../../components/category_products";
  
+import "../../styles/restaurant.scss";
+ 
 class ShowRestaurant extends Component {
   state = {
     restaurant: {}
@@ -23,7 +25,7 @@ class ShowRestaurant extends Component {
               <Box>
                 <Column.Group>
                   <Column size={3}>
-                    <Image src={this.state.restaurant.image_url} alt={this.state.restaurant.name}/>
+                    <Image src={this.state.restaurant.image_url} />
                   </Column>
                   <Column size={7}>
                     <p>{this.state.restaurant.description}</p>
@@ -41,8 +43,8 @@ class ShowRestaurant extends Component {
               </Box>
  
               {this.state.restaurant.product_categories &&
-                this.state.restaurant.product_categories.map((category, i) => {
-                  return <CategoryProducts {...category} key={i} />
+                this.state.restaurant.product_categories.map(category => {
+                  return <CategoryProducts restaurant={this.state.restaurant} {...category} />
                 })
               }
             </Fragment>
