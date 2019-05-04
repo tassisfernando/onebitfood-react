@@ -16,7 +16,7 @@ const Home = () => (
           <Icon size="small" color="white">
             <FaCrosshairs />
           </Icon>
-          <span class="has-text-white">ENCONTRAR AGORA</span>
+          <span className="has-text-white">ENCONTRAR AGORA</span>
         </Button>
       </Link>
     </Column>
